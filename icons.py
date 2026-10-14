@@ -1,0 +1,62 @@
+"""Shared image + icon definitions for build.py."""
+CDN = "https://images.squarespace-cdn.com/content/v1/5d6393313a17220001ebcec3/"
+def img(i, w=1500): return f"{CDN}{i}?format={w}w"
+
+IMG = {
+ 'IMG_1002': '1649847168783-LQJY08BWZ86962OOWPNR/IMG_1002.JPG',
+ 'A2': '1650039787069-0TPUZ6AMGRCSQH83BK8G/A2.jpg', 'A3': '1650039831865-GSZNDSZ6XCMYX9JTQIDV/A3.jpg',
+ 'A4': '1650039841463-ROOZX5T455YUILHN1KMF/A4.jpg', 'A5': '1650039897444-5TTIAYAO2ASK9Y5TD3EF/A5.jpg',
+ 'A6': '1650039892064-ZSIOWO9EZDD3KQZ8KENP/A6.jpg', 'A7': '1650039941711-71Z324EIB8NQIVLH1AJA/A7.jpg',
+ 'A8': '1650039905926-SFPOAUD3TI8ULPF74046/A8.jpg', 'A9': '1650039932153-HSQ0X51I0BH61IAOPD29/A9.jpg',
+ 'B1': '1650040008103-U34AB5IOYNT0CWEB47F0/B1.jpg', 'B2': '1650040028879-YB2OUAPPPDX0IYM3WZD2/B2.jpg',
+ 'F1': '1650040013772-1YI17HT76EA0PNPI5WQG/F1.jpg', 'H1': '1650040049512-E1PRY0UY6HFNAA11FDTZ/H1.jpg',
+ 'P1': '1650040412919-2R066JSFDO44PFLXOLVE/P1.jpg', 'P2': '1650040422175-R5ADYNMSOHWVDSP39B9Q/P2.jpg',
+ 'W1': '1650040587307-WICS59M2BPKLVGXQ2VNI/W1.jpg', 'W2': '1650040606908-LNZWPK2ZCH8ZU41O0W3E/W2.jpg',
+ 'IMG_7253': '1650040833413-DZ2QBB4ZX912ECY2QBXG/IMG_7253.JPG',
+ 'W3': '1650040161210-NB77RI8RO5V12NR6QFSO/W3.jpg', 'W4': '1650040160229-J75O8EHRGWPD87HQ0S9Q/W4.jpg',
+ 'W9': '1650041091350-ORUJBOWY7ULJREHX4CE1/W9.jpg',
+ 'Q1': '1650041341315-U8J9D13R28IJ15KQUIW2/Q1.jpg', 'Q2': '1650041570024-82FG6KH3XTZ6365GCYPI/Q2.jpg',
+ 'Q3': '1650041356702-S47ONKSQNMDL0V7XWC67/Q3.jpg',
+}
+def I(k, w=1500): return img(IMG[k], w)
+
+def svg(paths, extra=''):
+    return f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"{extra}>{paths}</svg>'
+ICON = {
+ 'arrow': svg('<path d="M5 12h14M13 6l6 6-6 6"/>', ' class="i-dir"'),
+ 'check': svg('<path d="M20 6 9 17l-5-5"/>'),
+ 'check-circle': svg('<circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/>'),
+ 'calendar': svg('<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/>'),
+ 'phone': svg('<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/>'),
+ 'mail': svg('<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/>'),
+ 'pin': svg('<path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>'),
+ 'user': svg('<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>'),
+ 'msg': svg('<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>'),
+ 'grid': svg('<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>'),
+ 'shield': svg('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>'),
+ 'clock': svg('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'),
+ 'compass': svg('<path d="M12 2v3M5 21l7-16 7 16M7.5 15h9"/>'),
+ 'pen': svg('<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>'),
+ 'ruler': svg('<path d="M21.3 8.7 8.7 21.3a1 1 0 0 1-1.4 0l-4.6-4.6a1 1 0 0 1 0-1.4L15.3 2.7a1 1 0 0 1 1.4 0l4.6 4.6a1 1 0 0 1 0 1.4z"/><path d="m7.5 10.5 2 2M10.5 7.5l2 2M13.5 4.5l2 2M4.5 13.5l2 2"/>'),
+ 'hammer': svg('<path d="m15 12-8.5 8.5a2.1 2.1 0 0 1-3-3L12 9"/><path d="M17.6 15 22 10.6M20 12.6l-6.4-6.4a3 3 0 0 0-4.2 0L8 7.6l1.4 1.4 2-2 6.4 6.4"/>'),
+ 'brush': svg('<path d="M9.1 13.9 3 20a2 2 0 0 0 3 3l6.1-6.1"/><path d="m14 7 3 3M8 13l5-5a4 4 0 0 1 6 6l-5 5z"/>'),
+ 'clipboard': svg('<rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/>'),
+ 'wrench': svg('<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"/>'),
+ 'chart': svg('<path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/>'),
+ 'key': svg('<circle cx="7.5" cy="15.5" r="4.5"/><path d="m10.7 12.3 9.3-9.3M17 6l3 3M14 9l2 2"/>'),
+ 'eye': svg('<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>'),
+ 'target': svg('<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>'),
+ 'award': svg('<circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/>'),
+ 'hardhat': svg('<path d="M2 18h20M4 18v-3a8 8 0 0 1 16 0v3M10 7V4h4v3"/>'),
+ 'menu': svg('<path d="M4 7h16M4 12h16M4 17h16"/>'),
+ 'x': svg('<path d="M18 6 6 18M6 6l12 12"/>'),
+ 'left': svg('<path d="m15 18-6-6 6-6"/>'),
+ 'right': svg('<path d="m9 18 6-6-6-6"/>'),
+ 'instagram': svg('<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/>'),
+ 'facebook': svg('<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>'),
+ 'search': svg('<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>'),
+ 'globe': svg('<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>'),
+ 'send': svg('<path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/>'),
+}
+WA_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.8.4 3.5 3.5 0 0 0-1.1 2.6 6 6 0 0 0 1.3 3.2 13.8 13.8 0 0 0 5.3 4.7c2 .8 2.7.9 3.7.8a3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3zM12 21.8a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.2A11.8 11.8 0 0 0 1.7 17.9L0 24l6.3-1.7a11.8 11.8 0 0 0 5.7 1.4A11.9 11.9 0 0 0 20.4 3.6z"/></svg>'
+

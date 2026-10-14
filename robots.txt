@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /_original-squarespace/
+Disallow: /data/
+
+Sitemap: https://www.paragoncmc.com/sitemap.xml
