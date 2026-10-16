@@ -67,7 +67,7 @@ def ph_dims(slug, f, thumb=False):
         if it['f'] == f: return (it['tw'], it['th']) if thumb else (it['w'], it['h'])
     return (1600, 1200)
 
-HERO = {'home': ('hyundai-mopar-visitor-center', '01'), 'about': ('sk-rooftop', '05'), 'services': ('asharq-news-ramallah', '04'),
+HERO = {'home': ('_hero', 'home'), 'about': ('sk-rooftop', '05'), 'services': ('asharq-news-ramallah', '04'),
         'projects': ('french-german-cultural-center', '03'), 'workshops': ('_workshops', '07'),
         'contact': ('la-vanda-bridal-store', '01'), 'banner': ('locanda-farah-boutique-hotel', '03')}
 def hero_bg(key): s, f = HERO[key]; return ph(s, f)
@@ -182,11 +182,13 @@ def head(title, desc, image_abs, ld=()):
 <a class="skip" href="#main">{t('Skip to content', 'انتقل إلى المحتوى')}</a>
 '''
 
+ACTIVE_ATTR = ' class="active" aria-current="page"'
+
 def header(active):
     other = ('../' * _depth()) + ('ar/' + CUR if LANG == 'en' else '../' + CUR)
     if ABS: other = '/ar/' if LANG == 'en' else '/'
     other_label = t('العربية', 'English'); other_lang = t('ar', 'en')
-    links = "".join(f'<li><a href="{U(h)}"{" class=\"active\" aria-current=\"page\"" if h == active else ""}>{x}</a></li>' for h, x in nav())
+    links = "".join(f'<li><a href="{U(h)}"{ACTIVE_ATTR if h == active else ""}>{x}</a></li>' for h, x in nav())
     mlinks = "".join(f'<a href="{U(h)}">{x}</a>' for h, x in nav())
     return f'''<header class="site-header">
   <div class="container nav">
